@@ -98,7 +98,7 @@ router.post('/login', async function(req, res, next) {
     }
   }
 });
-router.get('/me', passport.authenticate('jwt', { session: false }), function(req, res) {
+router.get('/protected', passport.authenticate('jwt', { session: false }), function(req, res) {
   res.json('Success! You can now see this without a token.');
 });
 module.exports = router;
